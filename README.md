@@ -300,8 +300,8 @@ curl https://raw.githubusercontent.com/paxtonhare/demo-magic/master/demo-magic.s
 
 2. Download walk-through script using the following command:
 ```bash
-curl https://raw.githubusercontent.com/cgfulton/how-to/main/openshift/compliance-operator-walk-through.sh \
-     --output compliance-operator-walk-through.sh
+curl https://raw.githubusercontent.com/ocp4opsandsecurity/compliance-operator/main/compliance-operator-walk-through.sh \
+     --output walk-through.sh
 ```
 
 3. Execute the walk-through using the following command:
