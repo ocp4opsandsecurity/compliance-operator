@@ -192,7 +192,12 @@ spec:
   scans:
     - name: ${NAMESPACE}-rhcos4-scan
       scanType: Node
+      # This compliance profile reflects the core set of Moderate-Impact Baseline
+      # configuration settings for deployment of Red Hat Enterprise
+      # Linux CoreOS into U.S. Defense, Intelligence, and Civilian agencies.
       profile: xccdf_org.ssgproject.content_profile_moderate
+      # Content file that contains checks
+      # https://atopathways.redhatgov.io/compliance-as-code/scap/ssg-rhcos4-ds.xml
       content: ssg-rhcos4-ds.xml
       nodeSelector:
         node-role.kubernetes.io/worker: ''
