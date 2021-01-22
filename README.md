@@ -178,7 +178,7 @@ After we have installed the [compliance-operator](https://github.com/openshift/c
 
 The [ComplianceSuite](https://github.com/openshift/compliance-operator/blob/master/doc/crds.md#the-compliancesuite-object) in the background will create as many [ComplianceScan](https://github.com/openshift/compliance-operator/blob/master/doc/crds.md#the-compliancescan-object) objects as you specify in the `scans` field. The fields will be described in the section referring to [ComplianceScan](https://github.com/openshift/compliance-operator/blob/master/doc/crds.md#the-compliancescan-object) objects.
 
-Create a new [ComplianceSuite](https://github.com/openshift/compliance-operator/blob/master/doc/crds.md#the-compliancesuite-object) object with node and platform scans named `${NAMESPACE}-node-type-scan-setting` and `${NAMESPACE}-platform-type-scan-setting`:
+Create a new [ComplianceSuite](https://github.com/openshift/compliance-operator/blob/master/doc/crds.md#the-compliancesuite-object) object:
 
 ```bash
 oc apply -n ${NAMESPACE} -f - <<EOF
