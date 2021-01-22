@@ -280,9 +280,13 @@ List [ComplianceRemediation](https://github.com/openshift/compliance-operator/bl
 oc get -n ${NAMESPACE} complianceremediations
 ```
 
-Apply remediation by setting `apply` item to `true` [ComplianceRemediation](https://github.com/openshift/compliance-operator/blob/master/doc/crds.md#the-complianceremediation-object) object using the following command:
+Apply remediation by setting `apply` item to `true` for example the `<scan_name>-sysctl-net-ipv4-conf-all-accept-redirects`  remediation using one of the following commands:
 ```bash
-oc edit -n ${NAMESPACE} complianceremediation/<compliance-rule-name>
+oc edit -n ${NAMESPACE} complianceremediation/<scan_name>-sysctl-net-ipv4-conf-all-accept-redirects
+```
+
+```bash
+oc patch complianceremediations/<scan_name>-sysctl-net-ipv4-conf-all-accept-redirects --patch '{"spec":{"apply":true}}' --type=merge
 ```
 
 The [compliance-operator](https://github.com/openshift/compliance-operator) then aggregates all applied remediations and creates a `MachineConfig` object per scan. This `MachineConfig` object is rendered to a `MachinePool` and the `MachineConfigDeamon` running on nodes in that pool pushes the configuration to the nodes and reboots the nodes.
