@@ -227,7 +227,7 @@ oc get compliancescan -n ${NAMESPACE} ${NAMESPACE}-rhcos4-scan
 
 View the events for the scan called `${NAMESPACE}-rhcos4-scan` use the following command:
 ```bash
-oc get events --field-selector involvedObject.kind=ComplianceScan,involvedObject.name=gfulton-how-to-demo-rhcos4-scan
+oc get events --field-selector involvedObject.kind=ComplianceScan,involvedObject.name=${NAMESPACE}-rhcos4-scan
 ```
 
 ### View Scan Settings
